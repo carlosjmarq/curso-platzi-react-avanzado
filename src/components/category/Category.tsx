@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Image } from './styles';
+import { Anchor, Image } from '../styles';
 
 const DEFAULT_IMAGE = 'https://cdn2.thecatapi.com/images/MTc4NzYzMg.jpg';
 
