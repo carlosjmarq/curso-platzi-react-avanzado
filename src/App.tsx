@@ -1,12 +1,18 @@
 import { useState } from 'react';
-import { Category } from './components/category/Category';
+import { ListOfCategories } from './components/ListOfCategories';
+import { PhotoCardList } from './components/ListOfPhotoCards';
+import { SvgLogo } from './components/Logo';
+import { PhotoCard } from './components/PhotoCard';
+import { GlobalStyles } from './GlobalStyles';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Petgram</h1>
-      <Category path={'fhdjskafh'} emoji={'abc'} />
-    </div>
+    <>
+      <GlobalStyles />
+      <SvgLogo />
+      <ListOfCategories />
+      <PhotoCardList />
+    </>
   );
 }
 
