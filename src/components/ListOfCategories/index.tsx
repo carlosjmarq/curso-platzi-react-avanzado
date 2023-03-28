@@ -1,17 +1,13 @@
-import React from 'react';
 import { Category } from '../Category';
 import { List, ListItem } from './styles';
-import { categories } from '../../../api/db.json';
-
-const DEFAULT_IMAGE = 'https://cdn2.thecatapi.com/images/MTc4NzYzMg.jpg';
+import axios from 'axios';
+import { CategoryType } from '../../types/Entities';
 
 interface ListCategoriesProps {
-  // path: string;
-  // emoji: string;
-  // cover?: string;
+  categories: CategoryType[];
 }
 
-export const ListOfCategories = ({ ...props }: ListCategoriesProps): JSX.Element => {
+export const ListOfCategories = ({ categories, ...props }: ListCategoriesProps): JSX.Element => {
   return (
     <List>
       {categories.map((category) => (
