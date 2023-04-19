@@ -1,5 +1,11 @@
 import { css, keyframes } from 'styled-components';
 
+interface AnimationParams {
+  time?: string;
+  type?: string;
+  scale?: number;
+}
+
 const fadeInKeyframes = keyframes`
 from {
   filter: blur(5px);
@@ -11,6 +17,19 @@ to {
 }
 `;
 
-export const fadeIn = (time: string = '1s', type: string = 'ease') => css`
+const translateKeyframes = ({ scale }: AnimationParams) => keyframes`
+from {
+  transform: translateY(-100%) scale(${scale});
+}
+to {
+  transform: translateY(0) scale(${scale});
+}
+`;
+
+export const fadeIn = ({ time = '1s', type = 'ease' }: AnimationParams) => css`
   animation: ${time} ${fadeInKeyframes} ${type};
+`;
+
+export const verticalTranslate = ({ time = '1s', type = 'ease', scale = 1 }: AnimationParams) => css`
+  animation: ${time} ${translateKeyframes({ scale })} ${type};
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SIZE = '3.5rem';
+const SIZE = '3.15rem';
 
 export const Anchor = styled.a`
   display: flex;
