@@ -12,8 +12,8 @@ function App() {
   const [categories, setCategories] = useState<CategoryType[]>([]);
 
   useEffect(() => {
-    const categoriesRequest = axios.get('https://curso-platzi-react-avanzado-api-carlosjmarq.vercel.app/categories');
-    Promise.all([categoriesRequest]).then(([{ data: categories }]) => {
+    const categoriesRequest = axios.get(`${import.meta.env.VITE_API_URL}/categories`);
+    Promise.all([categoriesRequest]).then(([{ data: categories }]: GetCategoriesResponse[]) => {
       setCategories(categories);
     });
   }, []);
