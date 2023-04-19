@@ -1,5 +1,5 @@
-import { Category } from './Entities';
+import { CategoryType } from './Entities';
 
 export type GetCategoriesResponse = {
-  data: Category[];
+  data: CategoryType[];
 };
